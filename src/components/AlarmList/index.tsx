@@ -26,5 +26,6 @@ export const AlarmList:React.FC = () => {
       <AlarmCard/>
       <AlarmCard/>
     </ScrollView>
+    
   );
 }

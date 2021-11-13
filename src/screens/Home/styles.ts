@@ -6,6 +6,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.gray,
     paddingHorizontal: 30,
-    paddingTop: 80
+    paddingTop: 80,
+    position: 'relative'
+  },
+  headerContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',    
   }
 });
