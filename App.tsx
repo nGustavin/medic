@@ -5,6 +5,8 @@ import {
 import AppLoading from 'expo-app-loading';
 import React from 'react';
 import { Home } from './src/screens/Home';
+import {NavigationContainer} from '@react-navigation/native'
+import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react-navigation/native-stack';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -13,11 +15,24 @@ export default function App() {
     Poppins_600SemiBold
   })
 
+  const StackNav = createNativeStackNavigator()
+
+  const stackNavigationOptions: NativeStackNavigationOptions = {
+    headerTitle: "sim",
+    headerStyle: {
+      backgroundColor: "rgba(0, 0, 0, 0)"
+}
+  }
+
   if(!fontsLoaded){
     return <AppLoading/>
   } else{
     return (
-      <Home/>
+      <NavigationContainer>
+        <StackNav.Navigator initialRouteName='Home'>
+          <StackNav.Screen name="Home" component={Home} options={stackNavigationOptions}/>
+        </StackNav.Navigator>
+      </NavigationContainer>
     );
   }
 }
