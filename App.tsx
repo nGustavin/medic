@@ -7,6 +7,7 @@ import React from 'react';
 import { Home } from './src/screens/Home';
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react-navigation/native-stack';
+import Details from './src/screens/Details';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -18,10 +19,7 @@ export default function App() {
   const StackNav = createNativeStackNavigator()
 
   const stackNavigationOptions: NativeStackNavigationOptions = {
-    headerTitle: "sim",
-    headerStyle: {
-      backgroundColor: "rgba(0, 0, 0, 0)"
-}
+    headerShown: false
   }
 
   if(!fontsLoaded){
@@ -31,6 +29,7 @@ export default function App() {
       <NavigationContainer>
         <StackNav.Navigator initialRouteName='Home'>
           <StackNav.Screen name="Home" component={Home} options={stackNavigationOptions}/>
+          <StackNav.Screen name="Alarm" component={Details} options={stackNavigationOptions}/>
         </StackNav.Navigator>
       </NavigationContainer>
     );

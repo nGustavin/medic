@@ -8,8 +8,10 @@ import { AlarmList } from '../../components/AlarmList';
 import { Welcome } from '../../components/Welcome';
 import { styles } from './styles';
 import { CircularDefaultButton } from '../../components/CircularDefaultButton';
+import {useNavigation} from '@react-navigation/native'
 
 export const Home: React.FC = () => {
+  const {navigate} = useNavigation()
   return (
     <>
     <StatusBar style="inverted"/>
