@@ -12,7 +12,7 @@ export const CircularDefaultButton:React.FC<CircularButtonProps> = ({action}) =>
   return (
     <TouchableOpacity
       style={styles.FloatingActionButtonStyle}
-      onPress={action}
+      onPress={() => action()}
     >
     <AntDesign name="plus" size={24} color={colors.white} />
   </TouchableOpacity>
